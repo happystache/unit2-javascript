@@ -8,6 +8,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
     <title>X-Files Quiz</title>
+    <style>
+        /* Centers the content within the .score-result div */
+        .score-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+        /* Style for score display */
+        #scoreDisplay {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Style for message */
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -51,19 +75,19 @@
         </div>
 
         <div class="question">
-            <p>5. What was the name of the alien super soldier in The X-Files?</p>
-            <label><input type="radio" name="q5" value="a"> Agent Reyes</label>
-            <label><input type="radio" name="q5" value="b"> Agent Doggett</label>
-            <label><input type="radio" name="q5" value="c"> The Smoking Man</label>
-            <label><input type="radio" name="q5" value="d"> Krycek</label>
+            <p>5. Which character was the primary antagonist in the *X-Files* mythology arc?</p>
+            <label><input type="radio" name="q5" value="a"> The Cigarette Smoking Man</label>
+            <label><input type="radio" name="q5" value="b"> The Well-Manicured Man</label>
+            <label><input type="radio" name="q5" value="c"> The Lone Gunmen</label>
+            <label><input type="radio" name="q5" value="d"> Jeffrey Spender</label>
         </div>
-
+        
         <div class="question">
-            <p>6. Which character was known as 'The Smoking Man'?</p>
-            <label><input type="radio" name="q6" value="a"> Fox Mulder</label>
+            <p>6. What is the real name of "The Smoking Man" from *The X-Files*?</p>
+            <label><input type="radio" name="q6" value="a"> C.G.B. Spender</label>
             <label><input type="radio" name="q6" value="b"> Walter Skinner</label>
-            <label><input type="radio" name="q6" value="c"> The Cigarette Smoking Man</label>
-            <label><input type="radio" name="q6" value="d"> Alex Krycek</label>
+            <label><input type="radio" name="q6" value="c"> Alex Krycek</label>
+            <label><input type="radio" name="q6" value="d"> William Mulder</label>
         </div>
 
         <div class="question">
@@ -99,19 +123,14 @@
         </div>
     </div>
 
-
-      <!-- Error Message (will appear here) -->
-      <div class="error-message">
-        <p id="errorDisplay"></p>
-    </div>
-
     <div class="score-result">
         <p id="scoreDisplay"></p>
         <p id="message"></p>
     </div>
 
-    <div class="submit-btn">
+    <div class="submit-wrapper">
         <button id="submit">Submit</button>
+        <div id="errorDisplay"></div>
     </div>
 
     <script src="assets/js/script.js"></script>

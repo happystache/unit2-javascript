@@ -17,41 +17,34 @@ body {
     background-color: #808080; /* Simple gray background */
     color: white;
     text-align: center;
-    padding: 20px 20px; /* Balanced padding around the entire header */
-    width: 100%; /* Full width for the header */
-    box-sizing: border-box; /* Prevents overflow or cropping */
+    padding: 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Header Title Styling */
 .quiz-header h1 {
     font-size: 36px;
     font-weight: 700;
-    margin: 0; /* Remove extra space around the header title */
+    margin: 0;
 }
 
-/* Optional logo styling, in case you want to use a logo */
-.quiz-header .logo {
-    width: 150px;
-    margin-top: 10px;
-}
-
-/* Subtitle styling under the header */
 .quiz-header p {
     font-size: 20px;
-    margin-top: 10px; /* Slight margin to separate subtitle */
+    margin-top: 10px;
 }
 
 /* Question Container Styling */
 .question-container {
     display: grid;
-    grid-template-columns: 1fr; /* Default single column for mobile */
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
+    margin-bottom: 40px;
 }
 
 @media (min-width: 600px) {
     .question-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -78,51 +71,89 @@ input[type="radio"] {
 
 /* Submit Button Styling */
 #submit {
-    background-color: #4CAF50; /* Green background */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 30px; /* Increased font size */
+    font-size: 30px;
     text-align: center;
     display: inline-block;
-    padding: 15px 30px;  /* Increased padding for a bigger button */
-    margin-top: 10px;  /* Reduced space above the button */
-    margin-bottom: 20px; /* Space below the button */
-    transition: background-color 0.3s ease; /* Smooth color change on hover */
+    padding: 12px 25px;
+    margin-top: 20px; /* Space between the button and the questions above */
+    margin-bottom: 20px; /* Space between the button and the bottom */
+    transition: background-color 0.3s ease;
 }
 
 #submit:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
+    background-color: #45a049;
 }
 
-/* Score Result Styling */
+/* Corrected and Cleaned Up Score Result Styling */
 .score-result {
-    text-align: center;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Add top margin if needed */
+    margin-bottom: 20px; /* Space below the score */
 }
 
+/* Score Display Styling */
 #scoreDisplay {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 700;
     color: #333;
+    margin-bottom: 10px; /* Space below the score */
 }
 
-/* Submit Button Centering */
-.submit-btn {
-    text-align: center;
+#message {
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 20px;
 }
 
+/* Wrapper to center the submit button and error message */
+.submit-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space above the button */
+    margin-bottom: 30px; /* Space below the button */
+    position: relative;
+}
+
+/* Error Message Visibility */
+#errorDisplay {
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between error message and submit button */
+}
+
+#errorDisplay.show {
+    display: block;
+    background-color: yellow; /* Optional background */
+    padding: 10px;
+}
+
+/* Error Message Styling */
 .error-message {
-    color: red; /* Red color for visibility */
-    font-size: 24px; /* Large font size */
-    font-weight: bold; /* Make text bold */
-    text-align: center; /* Center the text horizontally */
-    margin-bottom: 20px; /* Space below the error message */
-    padding: 10px 0; /* Add padding for spacing */
-    width: 100%; /* Ensure the message takes up the full width */
-    position: relative; /* Allows fine control of position */
-    left: 0; /* Ensures the element stays within the container's bounds */
-    top: 0; /* Ensures it's aligned at the top */
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* Added space between error message and submit button */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1; /* Make error visible when 'show' class is added */
+}
+
+.show {
+    display: block;
+    color: red;
 }

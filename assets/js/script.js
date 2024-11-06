@@ -1,6 +1,4 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
-
     const submitButton = document.getElementById('submit');
     const scoreDisplay = document.getElementById('scoreDisplay');
     const messageDisplay = document.getElementById('message');
@@ -19,15 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
         q10: 'c', // "I want to believe"
     };
 
-    submitButton.addEventListener('click', function () {
-
+    submitButton.addEventListener('click', function (event) {
         let score = 0;
-        let totalQuestions = 10;
+        const totalQuestions = 10;
         let unanswered = false;
+
+        // Clear previous messages and score
+        errorDisplay.classList.remove('show');
+        errorDisplay.textContent = ''; 
+        scoreDisplay.textContent = '';
+        messageDisplay.textContent = '';
 
         // Loop through each question to check answers
         for (let i = 1; i <= totalQuestions; i++) {
-            let question = document.querySelector(`input[name="q${i}"]:checked`);
+            const question = document.querySelector(`input[name="q${i}"]:checked`);
             if (!question) {
                 unanswered = true;
                 break;
@@ -40,21 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Display error message if not all questions are answered
         if (unanswered) {
-            errorDisplay.textContent = "Please select one answer per question";
-            errorDisplay.style.display = 'block';
-            scoreDisplay.textContent = '';
-            messageDisplay.textContent = '';
-            return;
+            errorDisplay.textContent = "Please select one answer per question.";
+            errorDisplay.classList.add('show'); // Make error visible using the CSS 'show' class
+            return; // Prevent further execution
         }
 
-        // Hide the error message
-        errorDisplay.style.display = 'none';
+        // Calculate and display the score if all questions are answered
+        const percentage = Math.round((score / totalQuestions) * 100); // Rounded to nearest integer
+        scoreDisplay.textContent = `Your score: ${percentage}%`;
 
-        // Calculate percentage
-        let percentage = (score / totalQuestions) * 100;
-        scoreDisplay.textContent = `Your score: ${percentage.toFixed(2)}%`;
-
-        // Display the message based on score
+        // Display message based on score
         if (percentage < 70) {
             scoreDisplay.classList.add('red');
             scoreDisplay.classList.remove('green');
