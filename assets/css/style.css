@@ -1,0 +1,80 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.quiz-header {
+    text-align: center;
+    margin-top: 50px; /* Adds breathing room from the top */
+}
+
+.quiz-header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.quiz-header .logo-container {
+    margin: 20px 0; /* Adds space around the logo */
+}
+
+.quiz-header .logo {
+    max-width: 150px; /* Set logo size */
+    height: auto;
+}
+
+.quiz-header .subtitle {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets (768px and up) */
+@media (max-width: 768px) {
+    .quiz-header h1 {
+        font-size: 2.5em;
+    }
+
+    .quiz-header .logo {
+        max-width: 120px;
+    }
+
+    .quiz-header .subtitle {
+        font-size: 1.2em;
+    }
+}
+
+/* For Mobile Phones (480px and up) */
+@media (max-width: 480px) {
+    .quiz-header h1 {
+        font-size: 2em;
+    }
+
+    .quiz-header .logo {
+        max-width: 100px;
+    }
+
+    .quiz-header .subtitle {
+        font-size: 1em;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
