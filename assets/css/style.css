@@ -1,80 +1,128 @@
-/* General Reset */
+/* General Reset and Body Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header Styles */
+/* Header Styling */
 .quiz-header {
+    background-color: #808080; /* Simple gray background */
+    color: white;
     text-align: center;
-    margin-top: 50px; /* Adds breathing room from the top */
+    padding: 20px 20px; /* Balanced padding around the entire header */
+    width: 100%; /* Full width for the header */
+    box-sizing: border-box; /* Prevents overflow or cropping */
 }
 
+/* Header Title Styling */
 .quiz-header h1 {
-    font-size: 3em;
+    font-size: 36px;
     font-weight: 700;
+    margin: 0; /* Remove extra space around the header title */
+}
+
+/* Optional logo styling, in case you want to use a logo */
+.quiz-header .logo {
+    width: 150px;
+    margin-top: 10px;
+}
+
+/* Subtitle styling under the header */
+.quiz-header p {
+    font-size: 20px;
+    margin-top: 10px; /* Slight margin to separate subtitle */
+}
+
+/* Question Container Styling */
+.question-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default single column for mobile */
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 600px) {
+    .question-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+}
+
+.question {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question p {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-.quiz-header .logo-container {
-    margin: 20px 0; /* Adds space around the logo */
-}
-
-.quiz-header .logo {
-    max-width: 150px; /* Set logo size */
-    height: auto;
-}
-
-.quiz-header .subtitle {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: #2c3e50;
+.question label {
     display: block;
-    margin-top: 10px;
-    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-/* Media Queries for Responsiveness */
-
-/* For Tablets (768px and up) */
-@media (max-width: 768px) {
-    .quiz-header h1 {
-        font-size: 2.5em;
-    }
-
-    .quiz-header .logo {
-        max-width: 120px;
-    }
-
-    .quiz-header .subtitle {
-        font-size: 1.2em;
-    }
+input[type="radio"] {
+    margin-right: 10px;
 }
 
-/* For Mobile Phones (480px and up) */
-@media (max-width: 480px) {
-    .quiz-header h1 {
-        font-size: 2em;
-    }
+/* Submit Button Styling */
+#submit {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px; /* Increased font size */
+    text-align: center;
+    display: inline-block;
+    padding: 15px 30px;  /* Increased padding for a bigger button */
+    margin-top: 10px;  /* Reduced space above the button */
+    margin-bottom: 20px; /* Space below the button */
+    transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
 
-    .quiz-header .logo {
-        max-width: 100px;
-    }
+#submit:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
 
-    .quiz-header .subtitle {
-        font-size: 1em;
-    }
+/* Score Result Styling */
+.score-result {
+    text-align: center;
+    margin-top: 30px;
+}
 
-    body {
-        padding: 10px;
-    }
+#scoreDisplay {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Submit Button Centering */
+.submit-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red; /* Red color for visibility */
+    font-size: 24px; /* Large font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center the text horizontally */
+    margin-bottom: 20px; /* Space below the error message */
+    padding: 10px 0; /* Add padding for spacing */
+    width: 100%; /* Ensure the message takes up the full width */
+    position: relative; /* Allows fine control of position */
+    left: 0; /* Ensures the element stays within the container's bounds */
+    top: 0; /* Ensures it's aligned at the top */
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,111 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
     <title>X-Files Quiz</title>
 </head>
-
 <body>
 
     <header class="quiz-header">
         <h1>X-Files Trivia Quiz</h1>
-        <div class="logo-container">
-            <img src="assets/images/xfiles-logo2.png" alt="X-Files Logo" class="logo">
-        </div>
-        <span class="subtitle">Fight the Future!</span>
+        <img src="assets/images/xfiles-logo2.png" alt="X-Files Logo" class="logo">
+        <p>Fight the Future!</p>
     </header>
 
-</body>
+    <div class="question-container">
+        <div class="question">
+            <p>1. Who is the lead character in The X-Files?</p>
+            <label><input type="radio" name="q1" value="a"> Fox Mulder</label>
+            <label><input type="radio" name="q1" value="b"> Dana Scully</label>
+            <label><input type="radio" name="q1" value="c"> John Doggett</label>
+            <label><input type="radio" name="q1" value="d"> Walter Skinner</label>
+        </div>
 
+        <div class="question">
+            <p>2. What year did The X-Files first air?</p>
+            <label><input type="radio" name="q2" value="a"> 1993</label>
+            <label><input type="radio" name="q2" value="b"> 1994</label>
+            <label><input type="radio" name="q2" value="c"> 1995</label>
+            <label><input type="radio" name="q2" value="d"> 1996</label>
+        </div>
+
+        <div class="question">
+            <p>3. What is Mulder's belief about aliens?</p>
+            <label><input type="radio" name="q3" value="a"> He believes they exist</label>
+            <label><input type="radio" name="q3" value="b"> He is skeptical</label>
+            <label><input type="radio" name="q3" value="c"> He denies their existence</label>
+            <label><input type="radio" name="q3" value="d"> He doesn’t have an opinion</label>
+        </div>
+
+        <div class="question">
+            <p>4. Who is the creator of The X-Files?</p>
+            <label><input type="radio" name="q4" value="a"> David Duchovny</label>
+            <label><input type="radio" name="q4" value="b"> Chris Carter</label>
+            <label><input type="radio" name="q4" value="c"> Gillian Anderson</label>
+            <label><input type="radio" name="q4" value="d"> Mitch Pileggi</label>
+        </div>
+
+        <div class="question">
+            <p>5. What was the name of the alien super soldier in The X-Files?</p>
+            <label><input type="radio" name="q5" value="a"> Agent Reyes</label>
+            <label><input type="radio" name="q5" value="b"> Agent Doggett</label>
+            <label><input type="radio" name="q5" value="c"> The Smoking Man</label>
+            <label><input type="radio" name="q5" value="d"> Krycek</label>
+        </div>
+
+        <div class="question">
+            <p>6. Which character was known as 'The Smoking Man'?</p>
+            <label><input type="radio" name="q6" value="a"> Fox Mulder</label>
+            <label><input type="radio" name="q6" value="b"> Walter Skinner</label>
+            <label><input type="radio" name="q6" value="c"> The Cigarette Smoking Man</label>
+            <label><input type="radio" name="q6" value="d"> Alex Krycek</label>
+        </div>
+
+        <div class="question">
+            <p>7. What was the name of Mulder's sister?</p>
+            <label><input type="radio" name="q7" value="a"> Samantha Mulder</label>
+            <label><input type="radio" name="q7" value="b"> Daisy Mulder</label>
+            <label><input type="radio" name="q7" value="c"> Lisa Mulder</label>
+            <label><input type="radio" name="q7" value="d"> Emily Mulder</label>
+        </div>
+
+        <div class="question">
+            <p>8. Which city is The X-Files primarily set in?</p>
+            <label><input type="radio" name="q8" value="a"> New York City</label>
+            <label><input type="radio" name="q8" value="b"> Washington, D.C.</label>
+            <label><input type="radio" name="q8" value="c"> San Francisco</label>
+            <label><input type="radio" name="q8" value="d"> Los Angeles</label>
+        </div>
+
+        <div class="question">
+            <p>9. Who was the first person Mulder trusted to help him with his investigations?</p>
+            <label><input type="radio" name="q9" value="a"> Dana Scully</label>
+            <label><input type="radio" name="q9" value="b"> Skinner</label>
+            <label><input type="radio" name="q9" value="c"> Cigarette Smoking Man</label>
+            <label><input type="radio" name="q9" value="d"> Alex Krycek</label>
+        </div>
+
+        <div class="question">
+            <p>10. What is the phrase that often accompanies Mulder's belief?</p>
+            <label><input type="radio" name="q10" value="a"> "Trust no one"</label>
+            <label><input type="radio" name="q10" value="b"> "The truth is out there"</label>
+            <label><input type="radio" name="q10" value="c"> "I want to believe"</label>
+            <label><input type="radio" name="q10" value="d"> "Fight the future"</label>
+        </div>
+    </div>
+
+
+      <!-- Error Message (will appear here) -->
+      <div class="error-message">
+        <p id="errorDisplay"></p>
+    </div>
+
+    <div class="score-result">
+        <p id="scoreDisplay"></p>
+        <p id="message"></p>
+    </div>
+
+    <div class="submit-btn">
+        <button id="submit">Submit</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
 </html>
