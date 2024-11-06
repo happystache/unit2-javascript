@@ -48,6 +48,18 @@ body {
     }
 }
 
+@media (min-width: 900px) {
+    .question-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on wider screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .question-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on very wide screens */
+    }
+}
+
 .question {
     background-color: #fff;
     padding: 20px;
@@ -156,4 +168,51 @@ input[type="radio"] {
 .show {
     display: block;
     color: red;
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 600px) {
+    .quiz-header h1 {
+        font-size: 28px;
+    }
+
+    .quiz-header p {
+        font-size: 16px;
+    }
+
+    .question-container {
+        padding: 10px;
+    }
+
+    .question {
+        padding: 15px;
+    }
+
+    #submit {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    #scoreDisplay {
+        font-size: 28px;
+    }
+
+    .error-message {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .quiz-header h1 {
+        font-size: 32px;
+    }
+
+    .question-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    #submit {
+        font-size: 26px;
+        padding: 10px 22px;
+    }
 }
