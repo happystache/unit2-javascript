@@ -12,6 +12,13 @@ body {
     padding: 0;
 }
 
+.quiz-header img {
+    width: 150px;  /* Adjust the width to your desired size */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;  /* Remove extra space below the image */
+    margin: 0 auto;  /* Center the image */
+}
+
 /* Header Styling */
 .quiz-header {
     background-color: #808080; /* Simple gray background */
