@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
     <title>X-Files Quiz</title>
+    <style>
+        /* Invisible headings */
+        h2 {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
     <header class="quiz-header">
@@ -19,14 +26,19 @@
     </header>
 
     <main>
-        <section id="quiz-container" class="question-container"></section>
+        <!-- Added invisible heading for quiz section -->
+        <section id="quiz-container" class="question-container">
+            <h2>Trivia Questions</h2>
+        </section>
 
         <div class="submit-wrapper">
             <button id="submit">Submit</button>
             <div id="errorDisplay"></div>
         </div>
 
+        <!-- Added invisible heading for score result section -->
         <section class="score-result">
+            <h2>Your Score</h2>
             <p id="scoreDisplay"></p>
             <p id="message"></p>
         </section>
