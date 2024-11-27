@@ -1,68 +1,105 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const submitButton = document.getElementById('submit');
-    const scoreDisplay = document.getElementById('scoreDisplay');
-    const messageDisplay = document.getElementById('message');
-    const errorDisplay = document.getElementById('errorDisplay');
+const quizData = [
+    {
+        question: "Who is the lead character in The X-Files?",
+        options: ["Fox Mulder", "Dana Scully", "John Doggett", "Walter Skinner"],
+        answer: "Fox Mulder"
+    },
+    {
+        question: "What year did The X-Files first air?",
+        options: ["1993", "1994", "1995", "1996"],
+        answer: "1993"
+    },
+    {
+        question: "What is Fox Mulder's nickname?",
+        options: ["Spooky", "Ghost", "Agent X", "Shadow"],
+        answer: "Spooky"
+    },
+    {
+        question: "What is Dana Scully's profession before joining The X-Files?",
+        options: ["Pathologist", "Physicist", "FBI Profiler", "Medical Doctor"],
+        answer: "Medical Doctor"
+    },
+    {
+        question: "What is the name of Mulder's sister, whose disappearance drives much of his work?",
+        options: ["Samantha", "Melissa", "Emily", "Sarah"],
+        answer: "Samantha"
+    },
+    {
+        question: "What government agency is primarily involved in covering up extraterrestrial activity in the show?",
+        options: ["The Syndicate", "The CIA", "The NSA", "The Pentagon"],
+        answer: "The Syndicate"
+    },
+    {
+        question: "What is the name of the recurring character who provides Mulder with secret information?",
+        options: ["Deep Throat", "X", "The Smoking Man", "Mr. Y"],
+        answer: "Deep Throat"
+    },
+    {
+        question: "What is the iconic tagline of The X-Files?",
+        options: ["The Truth Is Out There", "Trust No One", "We Are Not Alone", "Believe the Unbelievable"],
+        answer: "The Truth Is Out There"
+    },
+    {
+        question: "Which character replaced Fox Mulder as a lead in later seasons?",
+        options: ["John Doggett", "Walter Skinner", "Alex Krycek", "The Smoking Man"],
+        answer: "John Doggett"
+    },
+    {
+        question: "What is the name of the movie released in 1998 that continues The X-Files story?",
+        options: ["Fight the Future", "The X-Files: The Truth", "Beyond the Bureau", "I Want to Believe"],
+        answer: "Fight the Future"
+    }
+];
 
-    const correctAnswers = {
-        q1: 'a', // Fox Mulder
-        q2: 'a', // 1993
-        q3: 'a', // He believes they exist
-        q4: 'b', // Chris Carter
-        q5: 'd', // Krycek
-        q6: 'c', // The Cigarette Smoking Man
-        q7: 'a', // Samantha Mulder
-        q8: 'b', // Washington, D.C.
-        q9: 'a', // Dana Scully
-        q10: 'c', // "I want to believe"
-    };
+const quizContainer = document.getElementById("quiz-container");
 
-    submitButton.addEventListener('click', function (event) {
-        let score = 0;
-        const totalQuestions = 10;
-        let unanswered = false;
+// Dynamically render questions
+quizData.forEach((data, index) => {
+    const questionWrapper = document.createElement("article");
+    questionWrapper.classList.add("question");
 
-        // Clear previous messages and score
-        errorDisplay.classList.remove('show');
-        errorDisplay.textContent = ''; 
-        scoreDisplay.textContent = '';
-        messageDisplay.textContent = '';
+    const questionText = document.createElement("p");
+    questionText.textContent = `${index + 1}. ${data.question}`;
+    questionWrapper.appendChild(questionText);
 
-        // Loop through each question to check answers
-        for (let i = 1; i <= totalQuestions; i++) {
-            const question = document.querySelector(`input[name="q${i}"]:checked`);
-            if (!question) {
-                unanswered = true;
-                break;
-            }
-            // Check if the selected answer is correct
-            if (question.value === correctAnswers[`q${i}`]) {
-                score++;
-            }
-        }
+    data.options.forEach(option => {
+        const label = document.createElement("label");
+        label.innerHTML = `
+            <input type="radio" name="q${index}" value="${option}">
+            ${option}
+        `;
+        questionWrapper.appendChild(label);
+    });
 
-        // Display error message if not all questions are answered
-        if (unanswered) {
-            errorDisplay.textContent = "Please select one answer per question.";
-            errorDisplay.classList.add('show'); // Make error visible using the CSS 'show' class
-            return; // Prevent further execution
-        }
+    quizContainer.appendChild(questionWrapper);
+});
 
-        // Calculate and display the score if all questions are answered
-        const percentage = Math.round((score / totalQuestions) * 100); // Rounded to nearest integer
-        scoreDisplay.textContent = `Your score: ${percentage}%`;
+// Submit button functionality
+document.getElementById("submit").addEventListener("click", () => {
+    let score = 0;
+    let allAnswered = true;
 
-        // Display message based on score
-        if (percentage < 70) {
-            scoreDisplay.classList.add('red');
-            scoreDisplay.classList.remove('green');
-            messageDisplay.textContent = "Sorry! Watch more X-Files";
-            messageDisplay.style.color = 'red';
-        } else {
-            scoreDisplay.classList.add('green');
-            scoreDisplay.classList.remove('red');
-            messageDisplay.textContent = "Awesome! You are a believer!";
-            messageDisplay.style.color = 'green';
+    quizData.forEach((data, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (!selected) {
+            allAnswered = false;
+        } else if (selected.value === data.answer) {
+            score++;
         }
     });
+
+    const errorDisplay = document.getElementById("errorDisplay");
+    const scoreDisplay = document.getElementById("scoreDisplay");
+    const messageDisplay = document.getElementById("message");
+
+    if (!allAnswered) {
+        errorDisplay.textContent = "Answer all questions. Try again!";
+        errorDisplay.style.display = "block";
+    } else {
+        errorDisplay.style.display = "none";
+        scoreDisplay.textContent = `Score: ${score} / ${quizData.length}`;
+        messageDisplay.textContent = score === quizData.length
+            ? "Perfect! You're an X-Files expert!"
+            : "Keep trying! The truth is out there.";
+    }
 });

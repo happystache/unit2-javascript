@@ -8,33 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
     <title>X-Files Quiz</title>
-    <style>
-        /* Centers the content within the .score-result div */
-        .score-result {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto; /* Center the content horizontally */
-}
-
-        /* Style for score display */
-        #scoreDisplay {
-            font-size: 36px;
-            font-weight: 700;
-            color: #333;
-        }
-
-        /* Style for message */
-        #message {
-            font-size: 24px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-
     <header class="quiz-header">
         <h1>X-Files Trivia Quiz</h1>
         <figure class="logo-container">
@@ -43,97 +18,19 @@
         </figure>
     </header>
 
-    <div class="question-container">
-        <div class="question">
-            <p>1. Who is the lead character in The X-Files?</p>
-            <label><input type="radio" name="q1" value="a"> Fox Mulder</label>
-            <label><input type="radio" name="q1" value="b"> Dana Scully</label>
-            <label><input type="radio" name="q1" value="c"> John Doggett</label>
-            <label><input type="radio" name="q1" value="d"> Walter Skinner</label>
+    <main>
+        <section id="quiz-container" class="question-container"></section>
+
+        <div class="submit-wrapper">
+            <button id="submit">Submit</button>
+            <div id="errorDisplay"></div>
         </div>
 
-        <div class="question">
-            <p>2. What year did The X-Files first air?</p>
-            <label><input type="radio" name="q2" value="a"> 1993</label>
-            <label><input type="radio" name="q2" value="b"> 1994</label>
-            <label><input type="radio" name="q2" value="c"> 1995</label>
-            <label><input type="radio" name="q2" value="d"> 1996</label>
-        </div>
-
-        <div class="question">
-            <p>3. What is Mulder's belief about aliens?</p>
-            <label><input type="radio" name="q3" value="a"> He believes they exist</label>
-            <label><input type="radio" name="q3" value="b"> He is skeptical</label>
-            <label><input type="radio" name="q3" value="c"> He denies their existence</label>
-            <label><input type="radio" name="q3" value="d"> He doesn’t have an opinion</label>
-        </div>
-
-        <div class="question">
-            <p>4. Who is the creator of The X-Files?</p>
-            <label><input type="radio" name="q4" value="a"> David Duchovny</label>
-            <label><input type="radio" name="q4" value="b"> Chris Carter</label>
-            <label><input type="radio" name="q4" value="c"> Gillian Anderson</label>
-            <label><input type="radio" name="q4" value="d"> Mitch Pileggi</label>
-        </div>
-
-        <div class="question">
-            <p>5. Which character was the primary antagonist in the *X-Files* mythology arc?</p>
-            <label><input type="radio" name="q5" value="a"> The Cigarette Smoking Man</label>
-            <label><input type="radio" name="q5" value="b"> The Well-Manicured Man</label>
-            <label><input type="radio" name="q5" value="c"> The Lone Gunmen</label>
-            <label><input type="radio" name="q5" value="d"> Jeffrey Spender</label>
-        </div>
-        
-        <div class="question">
-            <p>6. What is the real name of "The Smoking Man" from *The X-Files*?</p>
-            <label><input type="radio" name="q6" value="a"> C.G.B. Spender</label>
-            <label><input type="radio" name="q6" value="b"> Walter Skinner</label>
-            <label><input type="radio" name="q6" value="c"> Alex Krycek</label>
-            <label><input type="radio" name="q6" value="d"> William Mulder</label>
-        </div>
-
-        <div class="question">
-            <p>7. What was the name of Mulder's sister?</p>
-            <label><input type="radio" name="q7" value="a"> Samantha Mulder</label>
-            <label><input type="radio" name="q7" value="b"> Daisy Mulder</label>
-            <label><input type="radio" name="q7" value="c"> Lisa Mulder</label>
-            <label><input type="radio" name="q7" value="d"> Emily Mulder</label>
-        </div>
-
-        <div class="question">
-            <p>8. Which city is The X-Files primarily set in?</p>
-            <label><input type="radio" name="q8" value="a"> New York City</label>
-            <label><input type="radio" name="q8" value="b"> Washington, D.C.</label>
-            <label><input type="radio" name="q8" value="c"> San Francisco</label>
-            <label><input type="radio" name="q8" value="d"> Los Angeles</label>
-        </div>
-
-        <div class="question">
-            <p>9. Who was the first person Mulder trusted to help him with his investigations?</p>
-            <label><input type="radio" name="q9" value="a"> Dana Scully</label>
-            <label><input type="radio" name="q9" value="b"> Skinner</label>
-            <label><input type="radio" name="q9" value="c"> Cigarette Smoking Man</label>
-            <label><input type="radio" name="q9" value="d"> Alex Krycek</label>
-        </div>
-
-        <div class="question">
-            <p>10. What is the phrase that often accompanies Mulder's belief?</p>
-            <label><input type="radio" name="q10" value="a"> "Trust no one"</label>
-            <label><input type="radio" name="q10" value="b"> "The truth is out there"</label>
-            <label><input type="radio" name="q10" value="c"> "I want to believe"</label>
-            <label><input type="radio" name="q10" value="d"> "Fight the future"</label>
-        </div>
-    </div>
-
-    <div class="score-result">
-        <p id="scoreDisplay"></p>
-        <p id="message"></p>
-    </div>
-
-    <div class="submit-wrapper">
-        <button id="submit">Submit</button>
-        <div id="errorDisplay"></div>
-    </div>
+        <section class="score-result">
+            <p id="scoreDisplay"></p>
+            <p id="message"></p>
+        </section>
+    </main>
 
     <script src="assets/js/script.js"></script>
 </body>

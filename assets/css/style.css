@@ -1,4 +1,4 @@
-/* General Reset and Body Styling */
+/* General Reset and Body Styling */ 
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +12,9 @@ body {
     padding: 0;
 }
 
-.quiz-header img {
-    width: 150px;  /* Adjust the width to your desired size */
-    height: auto;  /* Maintain aspect ratio */
-    display: block;  /* Remove extra space below the image */
-    margin: 0 auto;  /* Center the image */
-}
-
 /* Header Styling */
 .quiz-header {
-    background-color: #808080; /* Simple gray background */
+    background-color: #808080;
     color: white;
     text-align: center;
     padding: 20px 20px;
@@ -29,18 +22,14 @@ body {
     box-sizing: border-box;
 }
 
-.quiz-header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin: 0;
+.quiz-header img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.quiz-header p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* Question Container Styling */
+/* Question Container */
 .question-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -52,18 +41,6 @@ body {
 @media (min-width: 600px) {
     .question-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 900px) {
-    .question-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on wider screens */
-    }
-}
-
-@media (min-width: 1200px) {
-    .question-container {
-        grid-template-columns: repeat(3, 1fr); /* Three columns on very wide screens */
     }
 }
 
@@ -88,19 +65,22 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
-/* Submit Button Styling */
+/* Submit Button */
+.submit-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
 #submit {
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 30px;
-    text-align: center;
-    display: inline-block;
+    font-size: 16px;
     padding: 12px 25px;
-    margin-top: 20px; /* Space between the button and the questions above */
-    margin-bottom: 20px; /* Space between the button and the bottom */
     transition: background-color 0.3s ease;
 }
 
@@ -108,118 +88,34 @@ input[type="radio"] {
     background-color: #45a049;
 }
 
-/* Corrected and Cleaned Up Score Result Styling */
-.score-result {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px; /* Add top margin if needed */
-    margin-bottom: 20px; /* Space below the score */
-}
-
-/* Score Display Styling */
-#scoreDisplay {
-    font-size: 36px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px; /* Space below the score */
-}
-
-#message {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-/* Wrapper to center the submit button and error message */
-.submit-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Space above the button */
-    margin-bottom: 30px; /* Space below the button */
-    position: relative;
-}
-
-/* Error Message Visibility */
+/* Error Display */
 #errorDisplay {
     display: none;
     color: red;
     font-weight: bold;
-    margin-bottom: 10px; /* Space between error message and submit button */
-}
-
-#errorDisplay.show {
-    display: block;
-    background-color: yellow; /* Optional background */
-    padding: 10px;
-}
-
-/* Error Message Styling */
-.error-message {
-    color: red;
-    font-size: 24px;
-    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Adds spacing between the error message and the bottom of the page */
     text-align: center;
-    margin-bottom: 10px; /* Added space between error message and submit button */
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
-.error-message.show {
-    opacity: 1; /* Make error visible when 'show' class is added */
+/* Score Display */
+.score-result {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Adds spacing between the score message and the bottom of the page */
 }
 
-.show {
-    display: block;
-    color: red;
+#scoreDisplay {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
 }
 
-/* Media Queries for different screen sizes */
-@media (max-width: 600px) {
-    .quiz-header h1 {
-        font-size: 28px;
-    }
-
-    .quiz-header p {
-        font-size: 16px;
-    }
-
-    .question-container {
-        padding: 10px;
-    }
-
-    .question {
-        padding: 15px;
-    }
-
-    #submit {
-        font-size: 24px;
-        padding: 10px 20px;
-    }
-
-    #scoreDisplay {
-        font-size: 28px;
-    }
-
-    .error-message {
-        font-size: 18px;
-    }
+/* Additional Styling for Message Spacing */
+.submit-wrapper {
+    margin-top: 20px;
 }
 
-@media (max-width: 900px) {
-    .quiz-header h1 {
-        font-size: 32px;
-    }
-
-    .question-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-
-    #submit {
-        font-size: 26px;
-        padding: 10px 22px;
-    }
+#scoreDisplay, #errorDisplay {
+    margin-bottom: 10px; /* Ensures proper spacing between message and button */
 }
