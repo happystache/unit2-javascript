@@ -1,75 +1,101 @@
-# **The X-Files Quiz**
+# The X-Files Quiz 
 
-## **Project Overview**
-The X-Files Quiz is a fan-inspired web application that allows users to test their knowledge of the popular television series *The X-Files*. Created with HTML, CSS, and JavaScript, the quiz is interactive and visually engaging, featuring a design and color scheme that captures the eerie, mysterious tone of the series. The application is aimed at fans of the show and trivia enthusiasts alike, providing an engaging way for users to revisit iconic moments and characters from *The X-Files* while improving their recall and learning more about the series.
+## Project Overview
+The X-Files Quiz is a fan-inspired web application designed to test the knowledge of enthusiasts of the iconic television series *The X-Files*. Built with HTML, CSS, and JavaScript, the quiz combines a spooky, mysterious atmosphere with interactive elements. It offers a fun, engaging way for users to revisit the show's most memorable moments, characters, and plot twists, all while tracking their quiz performance. Whether you're a casual fan or a *X-Files* expert, this quiz will challenge your recall and keep you coming back for more.
 
-## **Responsive Mockup**
-*Include an image or link to a responsive mockup showcasing how the quiz appears on different devices.*
+## Features
 
-## **Features**
+### Existing Features
 
-### **Existing Features**
+#### X-Files Logo and Header
+Positioned prominently at the top of the page, the *X-Files* logo immediately sets the tone for the quiz, signaling to users that they’re about to embark on a mysterious journey through the world of *The X-Files*. The eerie design and bold font of the logo draw users in, adding to the immersive experience.
 
-1. **X-Files Logo and Header**
-   - Positioned at the top of the page, the X-Files logo establishes the theme immediately. Users can easily identify the quiz as related to *The X-Files*, creating an immersive experience from the start.
+![Logo and Header](assets/images/headerimage.png)
 
-2. **Quiz Area**
-   - The quiz questions are displayed in a prominent container that includes radio button options for answers. This layout helps users focus on the quiz, with the radio buttons allowing for easy answer selection.
+- **Design Details**: The logo is displayed in the upper-center of the page with ample spacing around it to ensure visibility and impact. The header contains a brief introduction to the quiz, hinting at the spooky and enigmatic nature of the questions.
 
-3. **Responsive Three-Column Layout**
-   - The quiz utilizes a responsive, two-column layout, designed to adjust smoothly across different screen sizes. This ensures that the quiz remains user-friendly on both desktop and mobile devices.
+#### Quiz Area
+The quiz questions are displayed in a central container, each with radio button options for answers. This design makes it easy for users to engage with the quiz, keeping the focus on the content. Each question is presented clearly, with multiple choice answers allowing users to make a selection with a simple click.
 
-4. **Submit Button and Feedback**
-   - After selecting answers, users can click the “Submit” button to receive immediate feedback on their quiz performance. A score is displayed, helping users gauge their knowledge level.
+![Question Boxes](assets/images/questionboxes.png)
 
-5. **Score Tracking**
-   - Users receive a score summary upon submitting their answers, letting them know how many questions they answered correctly. This encourages replayability for users aiming to improve their scores.
+- **Layout**: The questions and answer options are centrally aligned, with each answer provided as a clickable radio button. The design minimizes distractions, allowing the content to be the central focus while maintaining a user-friendly interface.
 
-### **Features Left to Implement**
+#### Responsive Layout
+The quiz is designed to display in a two-column layout that adjusts dynamically to fit various screen sizes, ensuring that the quiz remains accessible on desktops, tablets, and mobile devices. This layout improves user experience by providing a seamless transition between different devices.
 
-- **Question Randomization**: Adding a feature that randomizes question order each time the quiz is started, providing a fresh experience for repeat users.
-- **Timed Mode**: Introducing a timed quiz option for users seeking an extra challenge and a more interactive experience.
-- **High-Score Storage**: Implementing a feature that stores high scores locally so users can track their best results over time.
+- **Mobile-First Design**: The quiz’s two-column layout adapts to smaller screen sizes by stacking elements vertically. This ensures a consistent experience across devices without the need for horizontal scrolling or misalignment of content.
 
-## **Testing**
+#### Submit Button and Feedback
+After selecting answers, users can click the “Submit” button to receive immediate feedback, including a score summary that tells them how many questions they answered correctly. The feedback is presented in a clear, easy-to-understand format to guide users through their performance.
 
-### **HTML and CSS Validation**
-- **HTML**: All HTML code passed through the [W3C HTML Validator](https://validator.w3.org/) with no errors, ensuring that the markup is standards-compliant.
-- **CSS**: The CSS was validated with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), confirming that all styles are syntactically correct.
+![Submit button - 1](assets/images/submitbutton.png)
+![Submit button - 2](assets/images/incompletescore.png)
+![Submit button - 3](assets/images/perfectscore.png)
 
-### **JavaScript Validation**
-- **JSHint**: The JavaScript was validated using [JSHint](https://jshint.com/) with no major errors. Key metrics included:
+- **Interactive Feedback**: Once submitted, a message appears showing how many questions were answered correctly. This reinforces user engagement and provides motivation for those who wish to retry and improve their score.
+
+#### Score
+A final score is shown after each quiz, giving users an idea of how well they did and encouraging replayability. Users can aim to improve their scores with each attempt. 
+
+- **Scoring System**: The score is calculated based on the number of correct answers, with instant feedback on each submission. Users are encouraged to take the quiz multiple times to improve their scores.
+
+### Features Left to Implement
+
+- **Question Randomization**: Introduce functionality to randomize the question order each time the quiz is started, providing a new experience for repeat users. This would add variety and ensure that no two quiz sessions feel identical.
+  
+- **Timed Mode**: Add a timed option for users who want an extra challenge, simulating the intensity and urgency of an *X-Files* investigation. The timer would countdown as users select their answers, adding an element of suspense.
+
+- **High-Score Storage**: Implement a feature to save high scores locally, allowing users to track their best results over time. This feature would create a sense of achievement and make the quiz more competitive.
+
+## Testing
+
+### HTML and CSS Validation
+- **HTML**: All HTML code passed through the W3C HTML Validator without any errors, ensuring standards-compliance.
+- **CSS**: CSS code passed validation using the W3C CSS Validator, confirming that all styles are syntactically correct.
+
+![HTML Validation](assets/images/htmlvalidation.png)
+![CSS Validation](assets/images/cssvalidation.png)
+
+### JavaScript Validation
+- **JSHint**: The JavaScript code was validated using JSHint, with no major errors. Key metrics include:
   - 10 functions in total, with the largest function containing 12 statements.
   - Cyclomatic complexity values within manageable limits for readability and performance.
 
-### **Browser and Device Compatibility**
-The project was tested across various browsers, including Chrome, Firefox, and Safari, to confirm consistent behavior. Mobile responsiveness was verified on devices of different screen sizes, ensuring that layout and functionality remained intact.
+### Browser and Device Compatibility
+The application was tested across various browsers, including Chrome, Firefox, and Safari, to confirm consistent behavior. Mobile responsiveness was tested on various devices, ensuring the layout remains functional across all screen sizes.
 
-### **Lighthouse Performance Metrics**
+### Lighthouse Performance Metrics
 Using Google Lighthouse, the application achieved high scores in the following areas:
 - **Performance**: Efficient load times and resource usage.
-- **Accessibility**: Well-designed contrast, alt-text for images, and screen-reader-friendly layout.
-- **Best Practices**: High adherence to best practices for web performance and reliability.
+- **Accessibility**: Accessible design with good contrast and screen reader support.
+- **Best Practices**: High adherence to web performance and reliability standards.
 
-### **Known Bugs and Fixes**
+![Lighthouse Metrics](assets/images/lighthouse.png)
+
+## Known Bugs and Fixes
+
 - **Radio Button Styling**: Initially, there were issues with radio button alignment across different browsers. This was fixed by standardizing button dimensions and spacing.
 - **Responsive Layout Adjustments**: During testing on smaller screens, the two-column layout sometimes overlapped. Additional media queries resolved this, providing a balanced layout on all screen sizes.
+- **Dynamic Question Generation**: Questions are now generated dynamically through JavaScript, allowing for more flexibility and easy updates. Previously, the questions were hard-coded into the HTML, which made it difficult to add or modify questions. The dynamic generation resolves this by creating questions programmatically based on a question array, enhancing scalability and ease of maintenance.
 
-### **Unfixed Bugs**
-No remaining bugs have been identified at this time. However, further testing may reveal edge cases in user interaction that require additional adjustments.
+### Unfixed Bugs
+No remaining bugs have been identified at this time, but further testing may uncover edge cases that need attention.
 
-## **Deployment**
+## Deployment
+The X-Files Quiz is deployed on GitHub Pages, making it easily accessible to users worldwide. Deployment steps:
+1. Navigate to the GitHub repository's Settings tab.
+2. Under the Pages section, choose the Main branch for deployment.
+3. The quiz can be accessed at: [Live Site](#).
 
-The X-Files Quiz was deployed to GitHub Pages. Deployment steps:
-1. Navigate to the Settings tab in the GitHub repository.
-2. Select **Pages** under **Source** and choose the **Main branch**.
-3. The quiz is accessible at: [Live Site](https://github.com/happystache/unit2-javascript.git).
+## Credits
 
-## **Credits**
+### Content
+- The questions and trivia were adapted from *The X-Files* series and various fan sources, ensuring an authentic and comprehensive quiz experience.
+- The quiz's design was inspired by standard JavaScript quiz tutorials and customized to match the eerie, mysterious tone of *The X-Files*.
 
-### **Content**
-- Questions and trivia adapted from *The X-Files* show and fan community sources.
-- Quiz instructions were inspired by similar JavaScript quiz tutorials on YouTube.
+### Media
+- The *X-Files* logo and background images were sourced from free, open-source repositories, with attribution where required.
 
-### **Media**
-- The X-Files logo and background images were sourced from free, open-source image repositorz
+## Acknowledgments
+Special thanks to the *X-Files* fan community for providing the inspiration and source material for the trivia questions.
